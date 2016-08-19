@@ -1,0 +1,52 @@
+<!doctype>
+<html>
+
+<head>
+    <title> Flex site
+    </title>
+
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            overflow:hidden;
+            width: 100%;
+            flex-wrap: nowrap;
+            margin: 0 auto;
+        }
+        
+        .imageSlider {
+            width: 200%;
+            animation: pics 5s infinite;
+           position:absolute;
+            
+            align-content: flex-start;
+            
+        }
+        .slides {
+            width:100%;
+        }
+        
+      
+        @keyframes pics {
+            0% {
+                right: 0%
+            }
+            50% {
+                right:100%;
+            }
+            
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <div class="imageSlider">
+            <img class="slides" src="images/2.jpg">
+            <img class="slides" src="images/3.jpg">
+        </div>
+    </div>

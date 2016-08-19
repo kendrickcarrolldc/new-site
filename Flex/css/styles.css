@@ -1,0 +1,370 @@
+* {
+    box-sizing: border-box;
+}
+
+#toggle {
+    display: none;
+}
+
+body {
+    font-family: sans-serif;
+    background-image: url("../images/brickwall_@2X.png");
+    background-repeat: repeat;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+}
+
+header img {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transition: .3s linear;
+}
+
+header img:hover {
+    transform: scale(1.2);
+    transition: 2s ease-in-out;
+}
+
+.mobileHeader {
+    display: none;
+}
+
+nav {
+    background-color: black;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    position: relative;
+}
+
+nav li {
+    list-style-type: none;
+    flex: 1 0;
+    text-align: center;
+    color: white;
+    font-size: 1.3em;
+    border-right: 1px solid white;
+    padding: 1px 15px;
+    margin: 0 auto;
+    transition: 1s;
+}
+
+nav li:last-of-type {
+    border-right: 0px;
+}
+
+nav ul {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+nav ul a {
+    transition: 1s;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul a:hover {
+    font-size: 1.2em;
+}
+
+li:hover {
+    background-color: dimgray;
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.image {
+    width: 200%;
+    animation: pics 5s infinite;
+    position: relative;
+}
+.image h1 {
+    width: 7em;
+    position:absolute;
+    font-size:2em;
+    top: 0px;
+    left:3px;
+    color:white;
+    text-decoration: none;
+    text-shadow: black 3px 3px;
+    font-weight:normal;
+    
+}
+
+.slides {
+    width: 50%;
+    float: left;
+}
+
+.parent {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    align-items: stretch;
+}
+
+p {
+    margin-top: -10px;
+    padding-left: 18px;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0px 0px 15px 0px;
+    padding: 3px;
+    padding-left: .3em;
+    text-decoration: underline;
+    font-family:
+}
+
+article {
+    width: 60%;
+    padding: 0 8px;
+}
+
+.ties {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid black;
+    margin-bottom: 1.5em;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.ties h4 {
+    width: 100%;
+    align-content: flex-start;
+}
+
+.ties img {
+    width: 150px;
+    align-content: center;
+    transition: 1s ease-in-out;
+}
+
+.ties img:hover {
+    transform: scale(1.2);
+}
+
+article img {
+    width: 100%;
+    box-shadow: 1px 2px 4px black ;
+}
+
+aside {
+    width: 40%;
+    border-left: 1px solid black;
+    padding: 5px;
+    margin: 3px 0px 0px 7px;
+}
+
+.secLink {
+    color: black;
+    font-size: 1em;
+}
+
+.newArrivals {
+    width: 100%;
+    margin-bottom: .5em;
+    padding: 0;
+    box-shadow: 1px 2px 4px black ;
+}
+
+.newArrivals2 {
+    display: none;
+}
+
+footer {
+    display: flex;
+    background-color: black;
+    height: 50px;
+    color: white;
+    font-size: .7em;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+    padding-top: 1.6em;
+}
+
+@keyframes pics {
+    0% {
+        right: 0%
+    }
+    50% {
+        right: 100%;
+    }
+}
+
+@keyframes logo {
+    0% {
+        opacity: 0%
+    }
+    50% {
+        opacity: 50%
+    }
+    100% {
+        opacity: 100%
+    }
+}
+
+
+/*Media Querie for phones*/
+
+@media (max-width:480px) {
+    #toggle:checked ~ nav {
+        display: none;
+        left: 0;
+    }
+    #toggle,
+    label[for="toggle"] {
+        position: absolute;
+        top: 0;
+        left: 5px;
+    }
+    label[for="toggle"] {
+        border: 1px solid black;
+        padding: 15px;
+        font-size: 25px
+    }
+    header {
+        display: fixed;
+        flex-direction: row;
+        justify-content: center;
+    }
+    header img {
+        width: 150px;
+        height: 150px;
+        position: relative;
+    }
+    header img:hover {
+        transform: scale(1.2);
+        transition: 2s ease-in-out;
+    }
+    nav {
+        display: flex;
+        width: 100%;
+        height: 6em;
+        align-items: center;
+        justify-content: flex-start;
+        position: static;
+    }
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav li {
+        width: 100%;
+        line-height: 1.3em;
+        border: none;
+        color: white;
+        font-size: .9em;
+        padding: 0px;
+        margin: 0 auto;
+    }
+    /*    Carousel Start*/
+    .slider {
+        height: 200px
+    }
+    .image {
+        height: 200px;
+    }
+    .slides {
+        height: 200px;
+    }
+    /*    Carousel End*/
+    .parent {
+        display: flex;
+        flex-direction: column;
+    }
+    article {
+        width: 100%;
+    }
+    .ties {
+        display: flex;
+        justify-content: space-between;
+        align-content: flex-start;
+        width: 100%;
+    }
+    .ties h4 {
+        flex-grow:
+    }
+    .ties img {
+        width: 30%;
+        height: 100%;
+    }
+    aside {
+        width: 100%;
+        border: none;
+        margin: 0 auto;
+        padding: 0px;
+    }
+    aside img {
+        display: none;
+    }
+}
+
+
+/* Media query phone end*/
+
+
+/*Media query tablet start*/
+
+@media (min-width:480px) and (max-width:780px) {
+    nav li {
+        width: 100%;
+        line-height: 1.3em;
+        color: white;
+        font-size: .8em;
+        padding: 0px;
+        margin: 0 auto;
+    }
+    .parent {
+        display: flex;
+        flex-wrap: wrap
+    }
+    article {
+        width: 100%;
+    }
+    aside {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+    .asideContent {
+        order: -1;
+        flex: 1 0;
+    }
+    asideContent h1 {
+        width: 100%;
+    }
+    .newArrivals2 {
+        flex: 0;
+        width: 30%
+    }
+    .newArrivals {
+        display: none;
+    }
+}
+
+
+/*media query tablet end*/
